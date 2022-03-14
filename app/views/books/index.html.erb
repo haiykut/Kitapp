@@ -1,0 +1,15 @@
+<h1> Home Page </h1>
+<div>
+  <h3> <%= Book.count(:all) %> books in the app </h3>
+</div>
+<div>
+  <ul>
+      <% @books.each do |book| %>
+      <li><%= link_to book.title, book %></li>
+      <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= link_to "New Book", new_book_path %>
+</div>

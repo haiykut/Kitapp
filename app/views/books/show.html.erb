@@ -1,0 +1,14 @@
+<h1><%= @book.title %></h1>
+<div>
+  <b>Summary:</b> <%= @book.summary %><br>
+  <b>Author:</b> <%= @book.author %><br>
+  <b>ISBN:</b> <%= @book.isbn %>
+</div>
+<div>
+  <%= link_to "Edit", edit_book_path(@book) %>
+  <%= link_to "Destroy", book_path(@book), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Sure?"
+  } %>
+  <%= link_to "Back", books_path %>
+</div>
