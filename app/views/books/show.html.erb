@@ -4,11 +4,20 @@
   <b>Author:</b> <%= @book.author %><br>
   <b>ISBN:</b> <%= @book.isbn %>
 </div>
+
+<div>
+  <h2>Comments</h2>
+  <%= render @book.comments %>
+</div>
+<div>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form'%>
+</div>
 <div>
   <%= link_to "Edit", edit_book_path(@book) %>
   <%= link_to "Destroy", book_path(@book), data: {
-  turbo_method: :delete,
-  turbo_confirm: "Sure?"
-  } %>
+      turbo_method: :delete,
+      turbo_confirm: "Sure?"
+    } %>
   <%= link_to "Back", books_path %>
 </div>

@@ -1,21 +1,41 @@
 <%= form_with model: @book do |form| %>
   <div>
-    <%= form.label :title %> <br>
+    <b><%= form.label :title %></b><br>
     <%= form.text_field :title %>
+    <% @book.errors.full_messages_for(:title).each do |message| %>
+    <ul>
+      <li><%= message %>  </li>
+    </ul>
+    <%end%>
   </div>
   <div>
-    <%= form.label :author %><br>
+    <b><%= form.label :author %></b><br>
     <%= form.text_field :author %>
+    <% @book.errors.full_messages_for(:author).each do |message| %>
+    <ul>
+      <li><%= message %>  </li>
+    </ul>
+    <%end%>
   </div>
   <div>
-    <%= form.label :summary %><br>
+    <b><%= form.label :summary %></b><br>
     <%= form.text_area :summary %>
+    <% @book.errors.full_messages_for(:summary).each do |message| %>
+    <ul>
+      <li><%= message %>  </li>
+    </ul>
+    <%end%>
   </div>
   <div>
-    <%= form.label :isbn %><br>
+    <b><%= form.label :isbn %></b><br>
     <%= form.text_field :isbn %>
+    <% @book.errors.full_messages_for(:isbn).each do |message| %>
+    <ul>
+      <li><%= message %>  </li>
+    </ul>
+    <%end%>
   </div>
   <div>
-    <%= form.submit %>
+    <br><%= form.submit %>
   </div>
 <% end %>
